@@ -418,3 +418,60 @@ img {
   color: var(--muted);
   font-size: 1.1rem;
 }
+
+.auth {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field__label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.field__input--error {
+  border-color: var(--danger);
+}
+
+.field__error,
+.form__error {
+  color: var(--danger);
+  font-size: 0.85rem;
+}
+
+.form__error {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #fbeae8;
+}
+
+.auth__hint {
+  margin: 20px 0 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+.nav__button {
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
