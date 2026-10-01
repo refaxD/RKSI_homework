@@ -468,3 +468,10 @@ img {
   text-align: center;
   color: var(--muted);
 }
+
+.nav__button {
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
