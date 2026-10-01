@@ -398,3 +398,23 @@ img {
   flex-wrap: wrap;
   gap: 12px;
 }
+
+.hero {
+  margin-bottom: 40px;
+  padding: 48px 40px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--accent-soft), #fff);
+  border: 1px solid var(--border);
+}
+
+.hero h1 {
+  max-width: 640px;
+  font-size: 2.4rem;
+}
+
+.hero p {
+  max-width: 560px;
+  margin-bottom: 24px;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
