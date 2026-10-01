@@ -23,6 +23,11 @@ function Login() {
       setError("Заполните email и пароль");
       return;
     }
+    
+    if (!form.email.includes("@")) {
+      setError("Введите корректный email");
+      return;
+    }
 
     const success = login(form.email.trim().toLowerCase(), form.password);
 
