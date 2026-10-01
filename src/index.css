@@ -49,3 +49,133 @@ img {
   margin: 0 auto;
   padding: 0 16px;
 }
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  padding-top: 32px;
+  padding-bottom: 48px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 64px;
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.nav,
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header__actions {
+  margin-left: auto;
+}
+
+.nav__link {
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav__link:hover {
+  background: var(--accent-soft);
+}
+
+.nav__link.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.footer {
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--accent);
+}
+
+.btn--outline:hover {
+  background: var(--accent-soft);
+}
+
+.not-found {
+  text-align: center;
+  padding: 48px 0;
+}
+
+.not-found__code {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--accent);
+}
