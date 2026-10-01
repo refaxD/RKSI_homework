@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import FormField from "../components/FormField";
 import Button from "../components/Button";
@@ -9,6 +9,7 @@ function Login() {
   const [error, setError] = useState("");
   const { login } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -30,12 +31,13 @@ function Login() {
       return;
     }
 
-    navigate("/account");
+    navigate(location.state?.from || "/account", { replace: true });
   }
 
   return (
     <section className="page auth">
       <h1>Вход</h1>
+      {location.state?.from && <p className="auth__notice">Войдите, чтобы открыть эту страницу</p>}
 
       <form className="form" onSubmit={handleSubmit} noValidate>
         <FormField

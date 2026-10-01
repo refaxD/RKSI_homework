@@ -475,3 +475,10 @@ img {
   font: inherit;
   cursor: pointer;
 }
+
+.auth__notice {
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}

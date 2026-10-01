@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
+import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
 import BookPage from "./pages/BookPage";
@@ -17,7 +18,14 @@ function App() {
         <Route path="/catalog/:id" element={<BookPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/account" element={<Account />} />
+        <Route
+          path="/account"
+          element={
+            <ProtectedRoute>
+              <Account />
+            </ProtectedRoute>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
