@@ -18,7 +18,6 @@ function BookPage() {
   // Перезагружаем книгу при смене id в адресе
   useEffect(() => {
     let ignore = false;
-    setIsLoading(true);
 
     fetchBookById(id).then((data) => {
       if (!ignore) {
