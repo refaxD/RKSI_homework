@@ -7,6 +7,7 @@ import BookPage from "./pages/BookPage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Account from "./pages/Account";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -25,7 +26,9 @@ function App() {
               <Account />
             </ProtectedRoute>
           }
-        />
+        >
+          <Route index element={<Profile />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
