@@ -172,7 +172,6 @@ export const books = [
   },
 ];
 
-// Бэкенда нет, поэтому «загрузку с сервера» имитируем через задержку
 const DELAY = 500;
 
 export function fetchBooks() {

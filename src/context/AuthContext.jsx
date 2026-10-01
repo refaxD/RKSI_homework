@@ -2,8 +2,6 @@ import { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext(null);
 
-// Пользователи хранятся в localStorage — это учебная замена базе данных.
-// В настоящем проекте пароли в открытом виде так не хранят, этим занимается сервер.
 function getUsers() {
   return JSON.parse(localStorage.getItem("users") || "[]");
 }
@@ -12,13 +10,12 @@ function saveUsers(users) {
   localStorage.setItem("users", JSON.stringify(users));
 }
 
-// В сессию кладём пользователя без пароля
+// в сессию кладем пользователя без пароля
 function toSessionUser({ name, email, createdAt }) {
   return { name, email, createdAt };
 }
 
 export function AuthProvider({ children }) {
-  // Функция в useState выполняется один раз, поэтому после F5 сессия восстанавливается
   const [user, setUser] = useState(() => {
     const saved = localStorage.getItem("currentUser");
     return saved ? JSON.parse(saved) : null;

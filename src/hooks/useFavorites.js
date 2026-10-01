@@ -8,7 +8,6 @@ function readFavorites(key) {
   return JSON.parse(localStorage.getItem(key) || "[]");
 }
 
-// У каждого пользователя свой список избранного, поэтому ключ в localStorage зависит от email
 export function useFavorites() {
   const { user } = useAuth();
   const key = user ? `favorites:${user.email}` : null;

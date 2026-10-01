@@ -15,7 +15,6 @@ function BookPage() {
   const [book, setBook] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Перезагружаем книгу при смене id в адресе
   useEffect(() => {
     let ignore = false;
 

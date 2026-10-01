@@ -16,7 +16,6 @@ function Catalog() {
   const { favorites, toggleFavorite } = useFavorites();
 
   useEffect(() => {
-    // Флаг нужен, чтобы не обновлять состояние, если страницу уже закрыли до окончания загрузки
     let ignore = false;
 
     fetchBooks().then((data) => {
@@ -31,7 +30,6 @@ function Catalog() {
     };
   }, []);
 
-  // Отдельно список не храним: он пересчитывается из книг, поиска и жанра на каждом рендере
   const search = query.trim().toLowerCase();
   const visibleBooks = books.filter((book) => {
     const matchesGenre = genre === "Все" || book.genre === genre;
