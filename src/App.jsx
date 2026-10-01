@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Account from "./pages/Account";
 import Profile from "./pages/Profile";
+import Favorites from "./pages/Favorites";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           }
         >
           <Route index element={<Profile />} />
+          <Route path="favorites" element={<Favorites />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Route>

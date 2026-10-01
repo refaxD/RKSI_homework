@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchBookById } from "../data/books";
+import { useAuth } from "../context/AuthContext";
+import { useFavorites } from "../hooks/useFavorites";
 import BookCover from "../components/BookCover";
 import Loader from "../components/Loader";
 import Button from "../components/Button";
@@ -8,6 +10,8 @@ import Button from "../components/Button";
 function BookPage() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { user } = useAuth();
+  const { favorites, toggleFavorite } = useFavorites();
   const [book, setBook] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -61,6 +65,13 @@ function BookPage() {
         <p className="book__price">{book.price} ₽</p>
 
         <div className="book__actions">
+          {user ? (
+            <Button onClick={() => toggleFavorite(book.id)}>
+              {favorites.includes(book.id) ? "♥ В избранном" : "♡ В избранное"}
+            </Button>
+          ) : (
+            <Button to="/login">Войдите, чтобы добавить в избранное</Button>
+          )}
           <Button variant="outline" onClick={() => navigate("/catalog")}>
             ← Назад в каталог
           </Button>

@@ -531,3 +531,30 @@ img {
 .profile__form {
   max-width: 360px;
 }
+
+.fav {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--accent);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s;
+}
+
+.fav:hover {
+  transform: scale(1.12);
+}
+
+.fav--active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.empty .btn {
+  margin-top: 8px;
+}
